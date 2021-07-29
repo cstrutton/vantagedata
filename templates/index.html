@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block content %}
+<body>
+<h3> Select a date range </h3>
+<form action="" method='POST' name="myform">
+    {{ form.csrt_token }}
+    {{ form.start_date.label }} {{form.start_date(class='datepicker')}} {{form.hidden_tag()}}
+    {{ form.start_time.label }} {{form.start_time(class='timepicker')}} {{form.hidden_tag()}}
+    {{ form.end_date.label }} {{form.end_date(class='datepicker')}} {{form.hidden_tag()}}
+    {{ form.end_time.label }} {{form.end_time(class='timepicker')}} {{form.hidden_tag()}}
+    {{ form.part_numbers.label }} {{ form.part_numbers }}
+    <p>
+    {{form.submit()}}
+    </p>
+</form>
+</body>
+{% endblock %}
