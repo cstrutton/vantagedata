@@ -39,32 +39,33 @@ def index():
                  "WHERE part_number IN (%s) "
                  "AND created_at BETWEEN %s AND %s")
 
-        #part_numbers = '50-8670'
+        # part_numbers = '50-8670'
 
         # start_dt = datetime.datetime(2021, 7, 20, 6, 0, 0)
         # end_dt = datetime.datetime(2021, 7, 20, 14, 0, 0)
         print('Partnumbers', part_numbers)
         cursor.execute(query, (part_numbers, start, end))
 
-        comma_header = ('ID,created at,part number,laser data,'
-                        'Date,Time,Part Number,Date stamp,Media presence- Braze pellet holes,'
-                        'Lube holes,Media presence- Pellet holes,Spot face check,Pinion crosshole presence,'
-                        'Induction hardening presence,Balance hole position,Media presence bal hole,'
-                        'Witness mark,Media presence pinion holes,Media presence web slot,'
-                        'Media presence windows,Media presence Machined Recess plate side,'
-                        'Media presence blind ped. Holes,Media presence slot at pinion hole,'
-                        'Media presence blind pellet holes,Window height A,status,Window height B,status,'
-                        'Window height C,status,Window height D,status,Window height E,status,'
-                        'Window height Max,Window height Min,Pedestal side Pinion Holes OK,'
-                        'Staking pocket presence,Media presence Machined recess pedestal side,'
-                        'Pedestal side Machined pocket holes,Eddy Current Result,Resonance Result,'
-                        'Plate pinion hole a dia.,status,Plate pinion hole b dia.,status,'
-                        'Plate pinion hole c dia.,status,Plate pinion hole d dia.,status,'
-                        'Plate pinion hole e dia.,status,Pedestal pinion hole a dia.,status,'
-                        'Pedestal pinion hole b dia.,status,Pedestal pinion c dia.,status,'
-                        'Pedestal pinion hole d dia.,status,Pedestal pinion hole e dia.,status,Bushing ID,'
-                        'status,Upper ID,status,Lower ID,statusLaser Result,statusLaser Grade,'
-                        'statusBarcode Mark,status\n')
+        comma_header = ('id, created_at, part_number, laser_data, part_fail, Date, Time, Part Number, '
+                        'Date stamp, Overall Status, Media presence - Braze pellet holes, '
+                        'Lube holes, Media presence - Pellet holes, Spot face check, '
+                        'Pinion crosshole presence, Induction hardening presence, '
+                        'Balance hole position, Media presence bal hole, Witness mark, '
+                        'Media presence pinion holes, Media presence web slot, Media presence windows, '
+                        'Media presence Machined Recess plate side, Media presence blind ped.Holes, '
+                        'Media presence slot at pinion hole, Media presence blind pellet holes, '
+                        'Window A Max, Window A Min, Window B Max, Window B Min, Window C Max, Window C Min, '
+                        'Window D Max, Window D Min, Window E Max, Window E Min, W.Height status, Place holder, '
+                        'Pedestal side Pinion Holes OK, Staking pocket presence, '
+                        'Media presence Machined recess pedestal side, Pedestal side Machined pocket holes, '
+                        'Eddy Current Result, Resonance Result, Plate pinion hole a dia., Pl.P A Status, '
+                        'Plate pinion hole b dia., Pl.P B Status, Plate pinion hole c dia., Pl.P C Status, '
+                        'Plate pinion hole d dia., Pl.P D Status, Plate pinion hole e dia., Pl.P E Status, '
+                        'Pedestal pinion hole a dia., Pd. P A Status, Pedestal pinion hole b dia., Pd. P B Status, '
+                        'Pedestal pinion hole c dia., Pd. P C Status, Pedestal pinion hole d dia., Pd. P D Status, '
+                        'Pedestal pinion hole e dia., Pd. P E Status, Bushing ID, Bushing ID Status, '
+                        'Upper ID, Upper ID Status, Lower ID, Lower ID Status, Laser Mark, Laser Grade, '
+                        'Barcode Read, status15, status16\n')
 
         yield comma_header
 
