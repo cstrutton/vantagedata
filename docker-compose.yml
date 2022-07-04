@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    build: ./src
+    command: uwsgi ./uwsgi.ini
+    volumes:
+      - ./src/:/usr/src/app/
+    ports:
+      - "6482:80"
+    restart: always
