@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, session, send_file, Response, stream_with_context
 from flask_wtf import FlaskForm
-from wtforms.fields.html5 import DateField, TimeField
+from wtforms.fields import DateField, TimeField
 from wtforms import validators, SubmitField, StringField
 import datetime
 
