@@ -69,11 +69,12 @@ def index():
 
         yield comma_header
 
-        for (id, created_at, part_number, laser_data, inspection_data) in cursor:
+        for (id, created_at, part_number, laser_data, part_fail, inspection_data) in cursor:
             row = str(id) + ','
             row += created_at.isoformat() + ','
             row += part_number + ','
             row += laser_data + ','
+            row += part_fail + ','
             inspection_data = inspection_data.replace('\t', ',')
             row += inspection_data + ','
             row += '\n'
